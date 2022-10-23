@@ -6,6 +6,7 @@ swapoff -a
 echo net.bridge.bridge-nf-call-iptables = 1 >> /etc/sysctl.conf
 sysctl -p
 echo 1 > /proc/sys/net/ipv4/ip_forward
+yum install yum-utils -y
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
